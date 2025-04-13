@@ -13,7 +13,7 @@ public class TaskInboxServiceTest {
     public void testGetTasksForExistingStudent() {  
         System.out.println("+++ Get tasks for existing student ID +++");
         List<Task> tasks = service.getTasksForStudent("222113273");
-        assertEquals(2, tasks.size());
+        assertEquals(999, tasks.size());
         System.out.println("--- Task 1: " + tasks.get(0).getTitle());
         System.out.println("--- Task 2: " + tasks.get(1).getTitle() + "\n");
     }
