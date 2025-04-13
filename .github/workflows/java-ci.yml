@@ -35,9 +35,22 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: GitHub CI Build Failed
-        body: The latest commit has failed unit tests.
+        body: Build failed for Task9.1P repository.
         to: chloe.xibei.cheng@gmail.com
-        from: GitHub CI
+        from: GitHub Actions
+
+    - name: Send Email on Success
+      if: success()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: GitHub CI Build Success
+        body: Build succeeded for Task9.1P repository.
+        to: chloe.xibei.cheng@gmail.com
+        from: GitHub Actions
 
 
       
